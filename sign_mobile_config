@@ -1,5 +1,5 @@
 <?php
-$bool = openssl_pkcs7_sign("unsigned.mobileconfig", "signed.mobileconfig", "file://signingcert",  "file://key/signingkey", array(),0,"godaddy.crt");
+$bool = openssl_pkcs7_sign("unsigned.mobileconfig", "signed.mobileconfig", "file://signingcert",  "file://key/signingkey", array(),0,"certchain?.crt");
 $signed = file_get_contents("signed.mobileconfig");
 $mobileconfig = base64_decode(preg_replace('/(.+\n)+\n/', '', $signed, 1));
     header('Content-type: application/x-apple-aspen-config; chatset=utf-8');
